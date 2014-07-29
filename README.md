@@ -24,7 +24,7 @@ Our goal is preparing these katas is not to ensure that you "get them right," bu
 1. Make as much progress as you can in that amount of time
 1. When time runs out, publish your code and ask us for feedback
 
-As always, if you have any questions or feel stuck, you should send an email to your cohort's mailing list, <stuck@codeunion.io>, or one of your teachers. There are no rules against using Google or StackOverflow to help you with these katas, but please read [our note on StackOverflow and similar sites](#a-note-on-stackoverflow-and-similar-sites) first.
+As always, if you have any questions or feel stuck, you should drop a note in the [#pro-engineering Slack channel](https://codeunion.slack.com/messages/pro-engineering/). There are no rules against using Google or StackOverflow to help you with these katas, but please read [our note on StackOverflow and similar sites](#a-note-on-stackoverflow-and-similar-sites) first.
 
 ## Getting Started
 
