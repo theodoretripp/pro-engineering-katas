@@ -1,8 +1,14 @@
 # Week 1 Katas
 
-The katas this week will be all about RSpec, RSpec, RSpec.
+The katas this week will be all about RSpec, RSpec, RSpec.  Make sure you install all the gems you need by running
 
-Look at the specs in the `specs` directory.  Run a particular spec with, e.g.,
+```shell-session
+$ bundle install
+```
+
+from the `pro-engineering-katas` directory.
+
+As for the specs, look at the specs in the `specs` directory.  From the `week-01` directory you can run a particular spec with, e.g.,
 
 ```shell-session
 $ rspec specs/person_spec.rb
