@@ -40,19 +40,19 @@ class Board
   end
 
   def get(row, column)
-    raise_unless_dimensions_valid!
+    raise_unless_dimensions_valid!(row, column)
 
     # Implement this. :)
   end
 
   def place(row, column, piece)
-    raise_unless_dimensions_valid!
+    raise_unless_dimensions_valid!(row, column)
 
     # Implement this. :)
   end
 
   def remove(row, column)
-    raise_unless_dimensions_valid!
+    raise_unless_dimensions_valid!(row, column)
 
     # Implement this. :)
   end
