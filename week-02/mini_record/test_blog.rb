@@ -1,8 +1,6 @@
 require './mini_record'
 
-if File.exist?('blog.db')
-  MiniRecord::Database.database = 'blog.db'
-else
+unless File.exist?('blog.db')
   puts "Error: blog database doesn't exist.  To create it, run"
   puts ""
   puts "  sqlite3 blog.db < setup.sql"
@@ -12,6 +10,8 @@ end
 
 # We have to tell MiniRecord what database to use before we load our models
 # in case some of our class-level code assumes a database connection.
+MiniRecord::Database.database = 'blog.db'
+
 require './user'
 require './blog_post'
 
