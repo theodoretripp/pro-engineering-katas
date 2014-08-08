@@ -54,7 +54,7 @@ class BlogPost < MiniRecord::Model
 
   def save
     if new_record?
-      inser_record!
+      insert_record!
     else
       update_record!
     end
@@ -78,7 +78,7 @@ class BlogPost < MiniRecord::Model
 
   private
 
-  def inser_record!
+  def insert_record!
     now = DateTime.now
 
     write_attribute(:created_at, now) if attribute?(:created_at)
