@@ -22,14 +22,16 @@ class Person
   end
 
   def full_name
-    # Implement this. :)
+    @first_name + ' ' + @last_name
   end
 
   def age
-    # Implement this. :)
+    birth_year = @birth_date.year
+    now = Date.today.year
+    now - birth_year
   end
 
   def younger_than?(other_person)
-    # Implement this. :)
+    age < other_person.age
   end
 end
