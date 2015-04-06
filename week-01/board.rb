@@ -42,25 +42,42 @@ class Board
   def get(row, column)
     raise_unless_dimensions_valid!(row, column)
 
-    # Implement this. :)
+    @board[row][column]
   end
 
   def place(row, column, piece)
     raise_unless_dimensions_valid!(row, column)
+    raise_unless_cell_empty!(row, column)
 
-    # Implement this. :)
+    @board[row][column] = piece
   end
 
   def remove(row, column)
     raise_unless_dimensions_valid!(row, column)
+    raise_unless_cell_occupied!(row, column)
 
-    # Implement this. :)
+    @board[row][column] = nil
   end
 
   private
   def raise_unless_dimensions_valid!(row, column)
-    # Implement a single method that checks for the dimensions given and raises
-    # a DimensionError unless they're valid. We don't need to test this method
-    # because it's private.
+   if row >= @row_count
+      raise DimensionError, "row dimension is too large (got #{row})"
+   end
+   if column >= @column_count
+     raise DimensionError, "column dimension is too large (got #{column})"
+   end
+
+  def raise_unless_cell_empty!(row, column)
+    if @board[row][column] != nil
+      raise CellError, "cell (#{row},#{column}) is already occupied"
+    end
+  end
+
+  def raise_unless_cell_occupied!(row, column)
+    if @board[row][column] == nil
+      raise CellError, "cell (#{row},#{column}) is already empty"
+    end
+  end
   end
 end
