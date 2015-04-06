@@ -26,9 +26,7 @@ class Person
   end
 
   def age
-    birth_year = @birth_date.year
-    now = Date.today.year
-    now - birth_year
+    Date.today.year - @birth_date.year
   end
 
   def younger_than?(other_person)

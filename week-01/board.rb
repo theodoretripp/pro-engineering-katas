@@ -47,22 +47,16 @@ class Board
 
   def place(row, column, piece)
     raise_unless_dimensions_valid!(row, column)
+    raise_unless_cell_empty!(row, column)
 
-    if @board[row][column] == nil
-      @board[row][column] = piece
-    else
-      raise CellError, "cell (#{row},#{column}) is already occupied"
-    end
+    @board[row][column] = piece
   end
 
   def remove(row, column)
     raise_unless_dimensions_valid!(row, column)
+    raise_unless_cell_occupied!(row, column)
 
-    if @board[row][column] == nil
-      raise CellError, "cell (#{row},#{column}) is already empty"
-    else
-      @board[row][column] = nil
-    end
+    @board[row][column] = nil
   end
 
   private
@@ -73,5 +67,17 @@ class Board
    if column >= @column_count
      raise DimensionError, "column dimension is too large (got #{column})"
    end
+
+  def raise_unless_cell_empty!(row, column)
+    if @board[row][column] != nil
+      raise CellError, "cell (#{row},#{column}) is already occupied"
+    end
+  end
+
+  def raise_unless_cell_occupied!(row, column)
+    if @board[row][column] == nil
+      raise CellError, "cell (#{row},#{column}) is already empty"
+    end
+  end
   end
 end
