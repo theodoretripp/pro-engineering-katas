@@ -14,6 +14,7 @@ MiniRecord::Database.database = 'blog.db'
 
 require './user'
 require './blog_post'
+require './mini_record'
 
 jesse = User.where('email = ?', 'jesse@codeunion.io').first
 
